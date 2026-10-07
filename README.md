@@ -15,17 +15,27 @@ Installed Ubuntu Server in a UTM virtual machine on my Mac, updated all packages
 - Practiced help desk tasks: password resets and locking/unlocking accounts
 - Created a shared folder (`/srv/helpdesk`) with `chmod 770` so only the helpdesk group can use it
 - Tested it: the group member could create files, and my account (not in the group) got "Permission denied"
+<img width="1738" height="224" alt="1-permissions-test" src="https://github.com/user-attachments/assets/53374f20-5899-4cb2-afd1-d969003fba72" />
+
 
 ### 3. Secured SSH access
 - Set up SSH key authentication from my Mac
 - Disabled password logins so the server only accepts my key
 - Tested it: a forced password login was refused, and a key login worked
+<img width="1738" height="201" alt="2 ssh key only test" src="https://github.com/user-attachments/assets/0a2bdc7e-0a6a-4f56-8a83-b7fb56eeefe3" />
+
 
 ### 4. Firewall
 Enabled UFW to deny all incoming traffic except SSH (port 22).
+<img width="1738" height="457" alt="3 firewall status" src="https://github.com/user-attachments/assets/cd1c932a-ae65-4568-9638-0a847372c2c3" />
+
+
 
 ### 5. Automated backups
 Wrote a Bash script that compresses the shared folder into a timestamped backup, logs whether it worked, and deletes backups older than 7 days. Scheduled it to run nightly with cron.
+<img width="1738" height="260" alt="backup and cron" src="https://github.com/user-attachments/assets/1e981698-8d26-404a-8da1-d13f25d56146" />
+
+
 
 ## Problems I Hit and How I Fixed Them
 
